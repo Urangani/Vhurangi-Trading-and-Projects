@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Users, Shield, Award, Heart, Star } from 'lucide-react';
+import image from '../assets/image.png'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -131,10 +132,8 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold">Meet Our Leadership</h2>
           <div className="w-20 h-1 bg-amber-500 mx-auto mt-3 mb-14"></div>
-          <div className="grid md:grid-cols-3 gap-10">
-            <TeamCard name="Thabo Nkosi" role="Managing Director" image="https://randomuser.me/api/portraits/men/32.jpg" />
-            <TeamCard name="Lerato Mokoena" role="Operations Manager" image="https://randomuser.me/api/portraits/women/68.jpg" />
-            <TeamCard name="Sipho Dlamini" role="Senior Project Supervisor" image="https://randomuser.me/api/portraits/men/45.jpg" />
+          <div className="flex justify-around">
+            <TeamCard name="Vhulenda Makhetha" role="Managing Director" image={image} />
           </div>
         </div>
       </section>

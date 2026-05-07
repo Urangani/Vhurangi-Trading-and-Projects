@@ -9,6 +9,7 @@ import ServiceCard from '../components/home/ServiceCard';
 import TestimonialCard from '../components/home/TestimonialCard';
 import ProjectShowcase from '../components/home/ProjectShowcase';
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {

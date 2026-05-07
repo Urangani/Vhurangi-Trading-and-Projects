@@ -1,6 +1,10 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import image from '../../assets/exterior-design.jpeg'
+import image2 from '../../assets/interior-design.jpeg'
+import image3 from '../../assets/wielding.jpeg'
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,17 +18,17 @@ const projects: Project[] = [
   {
     title: 'Modern Residential Complex',
     category: 'Structural Construction',
-    image: 'https://images.unsplash.com/photo-1545324412-3e4b3e5dc9c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    image: image
   },
   {
     title: 'Luxury Interior Renovation',
     category: 'Interior Design',
-    image: 'https://images.unsplash.com/photo-1581092335871-4c6af942aad5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    image: image2
   },
   {
     title: 'Commercial Office Build',
     category: 'Commercial Construction',
-    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    image: image3
   },
   {
     title: 'Industrial Warehouse',

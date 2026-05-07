@@ -9,7 +9,6 @@ import {
   PaintRoller,
   Layout,
   Shield,
-  X,
   ChevronDown,
   ChevronUp,
   ArrowRight,
@@ -138,9 +137,6 @@ const ServicesPage = () => {
         {/* Structural & External */}
         <div
           id="structural"
-          ref={(el) => {
-            categoriesRef.current[0] = el;
-          }}
         >
           <EnhancedServiceCategory
             title="Structural & External"
@@ -154,9 +150,6 @@ const ServicesPage = () => {
         {/* Interior & Maintenance */}
         <div
           id="interior"
-          ref={(el) => {
-            categoriesRef.current[1] = el;
-          }}
         >
           <EnhancedServiceCategory
             title="Interior & Maintenance"
@@ -170,9 +163,6 @@ const ServicesPage = () => {
         {/* Minor Ancillary */}
         <div
           id="ancillary"
-          ref={(el) => {
-            categoriesRef.current[2] = el;
-          }}
         >
           <EnhancedServiceCategory
             title="Minor Ancillary Services"
@@ -186,9 +176,6 @@ const ServicesPage = () => {
         {/* Welding & Fitting */}
         <div
           id="welding"
-          ref={(el) => {
-            categoriesRef.current[3] = el;
-          }}
         >
           <EnhancedServiceCategory
             title="Welding & Fitting"
@@ -241,20 +228,9 @@ const EnhancedServiceCategory = ({
   icon,
   color,
   services,
-  restrictions
 }: EnhancedServiceCategoryProps) => {
   const [isExpanded, setIsExpanded] = useState(true);
   const contentRef = useRef<HTMLDivElement>(null);
-  const headerRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (!headerRef.current) return;
-    gsap.fromTo(
-      headerRef.current,
-      { x: -30, opacity: 0 },
-      { x: 0, opacity: 1, duration: 0.6, ease: 'back.out(1.2)' }
-    );
-  }, []);
 
   const toggleExpand = () => {
     if (!contentRef.current) return;
@@ -262,15 +238,11 @@ const EnhancedServiceCategory = ({
     if (isExpanded) {
       gsap.to(contentRef.current, {
         height: 0,
-        duration: 0.5,
-        ease: 'power2.inOut',
         onComplete: () => setIsExpanded(false)
       });
     } else {
       gsap.to(contentRef.current, {
         height: 'auto',
-        duration: 0.5,
-        ease: 'power2.inOut',
         onComplete: () => setIsExpanded(true)
       });
     }
@@ -278,7 +250,7 @@ const EnhancedServiceCategory = ({
 
   return (
     <div className="mb-16 bg-white rounded-2xl shadow-xl overflow-hidden">
-      <div ref={headerRef} className="relative">
+      <div className="relative">
         <div className={`absolute inset-0 bg-gradient-to-r ${color} opacity-10`}></div>
         <div className="relative p-8 cursor-pointer" onClick={toggleExpand}>
           <div className="flex items-center justify-between">
@@ -303,20 +275,12 @@ const EnhancedServiceCategory = ({
               <ServiceDetailCard key={idx} {...service} />
             ))}
           </div>
-          {restrictions && (
-            <div className="mt-8 p-4 bg-amber-50 border border-amber-200 rounded-xl flex gap-3">
-              <X className="text-amber-600 flex-shrink-0" size={20} />
-              <div className="text-sm text-amber-800">
-                <strong>Permissible Work Only:</strong> Structural steelwork, mechanical fitting, and specialist fencing are
-                not offered.
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </div>
   );
 };
+
 
 type ServiceDetailCardProps = Service;
 
@@ -327,35 +291,10 @@ const ServiceDetailCard = ({
   icon,
   features
 }: ServiceDetailCardProps) => {
-  const [hovered, setHovered] = useState(false);
-  const cardRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (!cardRef.current) return;
-
-    if (hovered) {
-      gsap.to(cardRef.current, {
-        y: -8,
-        scale: 1.02,
-        duration: 0.3,
-        boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)'
-      });
-    } else {
-      gsap.to(cardRef.current, {
-        y: 0,
-        scale: 1,
-        duration: 0.3,
-        boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1)'
-      });
-    }
-  }, [hovered]);
 
   return (
     <div
-      ref={cardRef}
       className="group rounded-xl overflow-hidden bg-white border border-neutral-200 transition-all cursor-pointer"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
     >
       <div className="relative h-48 overflow-hidden">
         <img
