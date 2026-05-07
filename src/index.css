@@ -1,0 +1,225 @@
+/* index.css - Tailwind CSS v4 */
+@import 'tailwindcss';
+
+/* Custom theme variables for Tailwind v4 */
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Playfair Display', serif;
+  
+  --color-primary-50: #fef3e8;
+  --color-primary-100: #fde8d0;
+  --color-primary-200: #fbd0a1;
+  --color-primary-300: #f9b872;
+  --color-primary-400: #f7a043;
+  --color-primary-500: #f58814;
+  --color-primary-600: #c46d10;
+  --color-primary-700: #93520c;
+  --color-primary-800: #623608;
+  --color-primary-900: #311b04;
+  
+  --color-dark: #1a1a1a;
+  --color-light: #fafafa;
+  
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-pulse-slow: pulse 3s ease-in-out infinite;
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+
+  /* Add to your index.css */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+/* .animate-slideDown moved outside @theme block (Tailwind v4 requirement) */
+
+  /* Performance optimizations for animations */
+  /* (moved outside @theme to satisfy Tailwind v4 @theme constraints) */
+  /* Reduce motion for users who prefer it */
+  /* (moved outside @theme to satisfy Tailwind v4 @theme constraints) */
+}
+
+/* Custom utilities */
+
+/* slideDown utility class (moved outside @theme) */
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .service-card {
+    transform: translateY(0) !important;
+  }
+
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+
+  .hero-tagline {
+    font-size: 0.875rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+}
+
+/* Performance optimizations for animations */
+.service-card, .testimonial-card, .form-field {
+  will-change: transform, opacity;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@utility animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+@utility animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+@utility animation-delay-600 {
+  animation-delay: 0.6s;
+}
+
+@utility animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@utility animate-scaleIn {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+@utility animate-slideInLeft {
+  animation: slideInLeft 0.7s ease-out forwards;
+}
+
+@utility animate-slideInRight {
+  animation: slideInRight 0.7s ease-out forwards;
+}
+
+@utility glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@utility gradient-text {
+  background: linear-gradient(to right, var(--color-primary-500), var(--color-primary-600));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+}
+
+/* Base styles */
+@layer base {
+  body {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-neutral-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary-500);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primary-600);
+}
+
+/* Image transitions */
+img {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
