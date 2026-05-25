@@ -50,8 +50,8 @@ export default function ProjectShowcase() {
       </div>
 
 
-  <div>
-    <div className="flex gap-6 px-4 sm:px-6 lg:px-8 w-max overflow-visible">
+  <div className='overflow-hidden'>
+    <div className="flex gap-6 px-4 sm:px-6 lg:px-8 w-max overflow-hidden">
       {projects.map((project, idx) => (
         <div
           key={idx}

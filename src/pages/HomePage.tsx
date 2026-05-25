@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, Building, Home, Wrench, Shield, Mail, Phone, MapPin, CheckCircle } from 'lucide-react';
+import { ArrowRight, Building, HardHat, Wrench, PaintRoller, Mail, Phone, MapPin, CheckCircle } from 'lucide-react';
 
 import ServiceCard from '../components/home/ServiceCard';
 import TestimonialCard from '../components/home/TestimonialCard';
@@ -200,26 +200,26 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <ServiceCard 
               icon={<Building size={32} />}
-              title="Structural"
-              description="Foundations, masonry, and structural renovations"
+              title="Construction"
+              description="Residential, commercial, and industrial building projects"
               delay={0}
             />
             <ServiceCard 
-              icon={<Home size={32} />}
-              title="Interior"
-              description="Painting, flooring, carpentry, and finishes"
+              icon={<HardHat size={32} />}
+              title="Structural Works"
+              description="Foundations, concrete, steel, and roofing solutions"
               delay={1}
             />
             <ServiceCard
               icon={<Wrench size={32} />}
-              title="Ancillary"
-              description="Plumbing, electrical, and maintenance"
+              title="Plumbing & Mechanical"
+              description="Water supply, drainage, HVAC, and mechanical systems"
               delay={2}
             />
             <ServiceCard 
-              icon={<Shield size={32} />}
-              title="Welding"
-              description="Steel mesh, fencing, and basic steelwork"
+              icon={<PaintRoller size={32} />}
+              title="Finishing & Maintenance"
+              description="Plastering, painting, tiling, and property upkeep"
               delay={3}
             />
           </div>
@@ -240,7 +240,7 @@ const HomePage = () => {
             <div className="about-content">
               <span className="text-primary-500 font-semibold text-sm uppercase tracking-wider">About Us</span>
               <h2 className="text-3xl md:text-4xl font-bold text-dark mt-2 mb-4">
-                15+ Years of Excellence in Construction
+                2+ Years of Excellence in Construction
               </h2>
               <p className="text-neutral-600 mb-6">
                 Vhurang Trading and Projects has been delivering quality construction services since 2010. 

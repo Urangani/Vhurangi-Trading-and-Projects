@@ -3,43 +3,37 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
-  BrickWall,
-  Trees,
-  Car,
+  Building,
+  HardHat,
+  Wrench,
   PaintRoller,
-  Layout,
   Shield,
+  Trees,
   ChevronDown,
   ChevronUp,
   ArrowRight,
   CheckCircle,
-  Building,
-  Home,
-  HardHat,
   Droplet,
-  Zap,
-  Hammer,
-  Ruler,
-  Package,
-  Truck
+  Fan,
+  Settings
 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ServicesPage = () => {
   const heroRef = useRef<HTMLElement>(null);
-  const categoriesRef = useRef<Array<HTMLDivElement | null>>([]);
 
   const categories = [
-    { id: 'structural', title: 'Structural & External', icon: <Building size={32} /> },
-    { id: 'interior', title: 'Interior & Maintenance', icon: <Home size={32} /> },
-    // lucide-react in this project does not export `Tool`, so use an available icon
-    { id: 'ancillary', title: 'Minor Ancillary', icon: <Truck size={32} /> },
-    { id: 'welding', title: 'Welding & Fitting', icon: <Shield size={32} /> }
+    { id: 'construction', title: 'Construction Services', icon: <Building size={32} /> },
+    { id: 'structural', title: 'Structural Works', icon: <HardHat size={32} /> },
+    { id: 'plumbing', title: 'Plumbing Services', icon: <Droplet size={32} /> },
+    { id: 'mechanical', title: 'Mechanical Services', icon: <Fan size={32} /> },
+    { id: 'finishing', title: 'Finishing Works', icon: <PaintRoller size={32} /> },
+    { id: 'maintenance', title: 'Maintenance Services', icon: <Settings size={32} /> },
+    { id: 'exterior', title: 'Exterior Works', icon: <Trees size={32} /> }
   ];
 
   useEffect(() => {
-    // Hero parallax effect
     if (heroRef.current) {
       ScrollTrigger.create({
         trigger: heroRef.current,
@@ -55,42 +49,6 @@ const ServicesPage = () => {
       });
     }
 
-    // Animate each category
-    categoriesRef.current.forEach((category) => {
-      if (category) {
-        gsap.fromTo(
-          category,
-          {
-            y: 50,
-            opacity: 0,
-            rotationX: -10
-          },
-          {
-            y: 0,
-            opacity: 1,
-            rotationX: 0,
-            duration: 0.8,
-            scrollTrigger: {
-              trigger: category,
-              start: 'top 85%',
-              end: 'bottom 70%',
-              toggleActions: 'play none none reverse'
-            }
-          }
-        );
-      }
-    });
-
-    // Floating animation for service icons
-    gsap.to('.service-icon', {
-      y: -5,
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: 'power1.inOut',
-      stagger: 0.2
-    });
-
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
@@ -98,7 +56,6 @@ const ServicesPage = () => {
 
   return (
     <div className="bg-light min-h-screen">
-      {/* Hero Section */}
       <section ref={heroRef} className="relative h-[60vh] min-h-[500px] overflow-hidden">
         <div className="hero-parallax absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-dark/80 to-dark/40 z-10"></div>
@@ -132,63 +89,99 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Service Categories */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        {/* Structural & External */}
-        <div
-          id="structural"
-        >
-          <EnhancedServiceCategory
-            title="Structural & External"
-            subtitle="Foundation to Finish"
+        <div id="construction">
+          <ServiceCategory
+            title="Construction Services"
+            subtitle="Building from the ground up"
             icon={<Building size={36} />}
-            color="from-blue-500 to-cyan-500"
+            color="from-blue-600 to-blue-800"
+            services={constructionServices}
+          />
+        </div>
+
+        <div id="structural">
+          <ServiceCategory
+            title="Structural Works"
+            subtitle="Strong foundations, lasting structures"
+            icon={<HardHat size={36} />}
+            color="from-blue-500 to-blue-700"
             services={structuralServices}
           />
         </div>
 
-        {/* Interior & Maintenance */}
-        <div
-          id="interior"
-        >
-          <EnhancedServiceCategory
-            title="Interior & Maintenance"
-            subtitle="Transform Your Space"
-            icon={<Home size={36} />}
-            color="from-emerald-500 to-teal-500"
-            services={interiorServices}
+        <div id="plumbing">
+          <ServiceCategory
+            title="Plumbing Services"
+            subtitle="Reliable water and drainage systems"
+            icon={<Droplet size={36} />}
+            color="from-cyan-500 to-blue-600"
+            services={plumbingServices}
           />
         </div>
 
-        {/* Minor Ancillary */}
-        <div
-          id="ancillary"
-        >
-          <EnhancedServiceCategory
-            title="Minor Ancillary Services"
-            subtitle="Quick & Reliable"
-            icon={<Truck size={36} />}
-            color="from-amber-500 to-orange-500"
-            services={ancillaryServices}
+        <div id="mechanical">
+          <ServiceCategory
+            title="Mechanical Services"
+            subtitle="Climate control and mechanical solutions"
+            icon={<Fan size={36} />}
+            color="from-sky-500 to-blue-600"
+            services={mechanicalServices}
           />
         </div>
 
-        {/* Welding & Fitting */}
-        <div
-          id="welding"
-        >
-          <EnhancedServiceCategory
-            title="Welding & Fitting"
-            subtitle="Precision Metalwork"
-            icon={<Shield size={36} />}
-            color="from-red-500 to-rose-500"
-            services={weldingServices}
-            restrictions={true}
+        <div id="finishing">
+          <ServiceCategory
+            title="Finishing Works"
+            subtitle="Perfecting every surface and detail"
+            icon={<PaintRoller size={36} />}
+            color="from-indigo-500 to-blue-600"
+            services={finishingServices}
+          />
+        </div>
+
+        <div id="maintenance">
+          <ServiceCategory
+            title="Maintenance Services"
+            subtitle="Keeping your property in prime condition"
+            icon={<Settings size={36} />}
+            color="from-blue-500 to-blue-700"
+            services={maintenanceServices}
+          />
+        </div>
+
+        <div id="exterior">
+          <ServiceCategory
+            title="Exterior Works"
+            subtitle="Beautiful and functional outdoor spaces"
+            icon={<Trees size={36} />}
+            color="from-emerald-500 to-blue-600"
+            services={exteriorServices}
           />
         </div>
       </div>
 
-      {/* CTA Banner */}
+      {/* Why Choose Us */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">Why Choose Us</h2>
+            <div className="w-20 h-1 bg-primary-500 mx-auto"></div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {whyChooseUs.map((item, idx) => (
+              <div key={idx} className="flex items-start gap-3 p-6 rounded-xl bg-neutral-50 hover:shadow-md transition-shadow">
+                <CheckCircle className="text-primary-500 mt-1 shrink-0" size={24} />
+                <div>
+                  <h3 className="font-semibold text-lg text-dark">{item.title}</h3>
+                  <p className="text-neutral-600 mt-1">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <div className="bg-gradient-to-r from-primary-500 to-primary-600 py-16">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Need a Custom Solution?</h2>
@@ -205,30 +198,29 @@ const ServicesPage = () => {
   );
 };
 
-type Service = {
+type ServiceItem = {
   title: string;
   description: string;
   image: string;
   icon: React.ReactNode;
-  features?: string[];
+  features: string[];
 };
 
-type EnhancedServiceCategoryProps = {
+type ServiceCategoryProps = {
   title: string;
   subtitle: string;
   icon: React.ReactNode;
   color: string;
-  services: Service[];
-  restrictions?: boolean;
+  services: ServiceItem[];
 };
 
-const EnhancedServiceCategory = ({
+const ServiceCategory = ({
   title,
   subtitle,
   icon,
   color,
   services,
-}: EnhancedServiceCategoryProps) => {
+}: ServiceCategoryProps) => {
   const [isExpanded, setIsExpanded] = useState(true);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -255,7 +247,7 @@ const EnhancedServiceCategory = ({
         <div className="relative p-8 cursor-pointer" onClick={toggleExpand}>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="service-icon p-3 bg-primary-50 rounded-xl text-primary-500">{icon}</div>
+              <div className="p-3 bg-primary-50 rounded-xl text-primary-500">{icon}</div>
               <div>
                 <h2 className="text-3xl font-bold text-dark">{title}</h2>
                 <p className="text-neutral-500 mt-1">{subtitle}</p>
@@ -272,7 +264,7 @@ const EnhancedServiceCategory = ({
         <div className="p-8 pt-0 border-t border-neutral-100">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {services.map((service, idx) => (
-              <ServiceDetailCard key={idx} {...service} />
+              <ServiceCard key={idx} {...service} />
             ))}
           </div>
         </div>
@@ -281,21 +273,15 @@ const EnhancedServiceCategory = ({
   );
 };
 
-
-type ServiceDetailCardProps = Service;
-
-const ServiceDetailCard = ({
+const ServiceCard = ({
   title,
   description,
   image,
   icon,
   features
-}: ServiceDetailCardProps) => {
-
+}: ServiceItem) => {
   return (
-    <div
-      className="group rounded-xl overflow-hidden bg-white border border-neutral-200 transition-all cursor-pointer"
-    >
+    <div className="group rounded-xl overflow-hidden bg-white border border-neutral-200 transition-all cursor-pointer hover:shadow-lg">
       <div className="relative h-48 overflow-hidden">
         <img
           src={image}
@@ -307,122 +293,148 @@ const ServiceDetailCard = ({
       <div className="p-5">
         <h3 className="text-xl font-bold text-dark mb-2">{title}</h3>
         <p className="text-neutral-600 text-sm mb-4">{description}</p>
-        {features && (
-          <ul className="space-y-2">
-            {features.map((feature: string, idx: number) => (
-              <li key={idx} className="flex items-center gap-2 text-sm text-neutral-600">
-                <CheckCircle size={14} className="text-primary-500" />
-                {feature}
-              </li>
-            ))}
-          </ul>
-        )}
+        <ul className="space-y-2">
+          {features.map((feature, idx) => (
+            <li key={idx} className="flex items-center gap-2 text-sm text-neutral-600">
+              <CheckCircle size={14} className="text-primary-500 shrink-0" />
+              {feature}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
 };
 
-const structuralServices = [
+const constructionServices: ServiceItem[] = [
   {
-    title: 'Masonry Walls',
-    description: 'Professional brick, block, and stone wall construction for residential and commercial properties.',
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    icon: <BrickWall size={20} className="text-primary-500" />,
-    features: ['Load-bearing walls', 'Retaining walls', 'Decorative stonework']
-  },
-  {
-    title: 'Timber Fencing',
-    description: 'Durable and aesthetically pleasing wooden fencing solutions for privacy and security.',
-    image: 'https://images.unsplash.com/photo-1501630864272-67b2e2c8c515?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    icon: <Trees size={20} className="text-primary-500" />,
-    features: ['Palisade fencing', 'Picket fences', 'Privacy screens']
-  },
-  {
-    title: 'Carports & Storage',
-    description: 'Custom-designed covered parking and secure storage structures.',
-    image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    icon: <Car size={20} className="text-primary-500" />,
-    features: ['Single/double carports', 'Tool sheds', 'Workshop spaces']
-  },
-  {
-    title: 'Renovations',
-    description: 'Complete property refurbishment and structural renovations.',
+    title: 'Construction Services',
+    description: 'Comprehensive building construction for residential, commercial, and industrial projects.',
     image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    icon: <Hammer size={20} className="text-primary-500" />,
-    features: ['Extensions', 'Conversions', 'Restorations']
+    icon: <Building size={20} className="text-primary-500" />,
+    features: [
+      'Residential building construction',
+      'Commercial building construction',
+      'Industrial construction',
+      'Turnkey construction projects',
+      'Renovations and remodeling',
+      'Building extensions and alterations',
+      'Demolition works',
+      'Civil engineering works'
+    ]
   }
 ];
 
-const interiorServices = [
+const structuralServices: ServiceItem[] = [
   {
-    title: 'Painting & Decorating',
-    description: 'Professional interior and exterior painting with premium finishes.',
-    image: 'https://images.unsplash.com/photo-1581092335871-4c6af942aad5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    icon: <PaintRoller size={20} className="text-primary-500" />,
-    features: ['Wall painting', 'Wallpapering', 'Decorative finishes']
-  },
-  {
-    title: 'Flooring Solutions',
-    description: 'Expert installation of all flooring types for any space.',
-    image: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    icon: <Layout size={20} className="text-primary-500" />,
-    features: ['Tiling', 'Vinyl flooring', 'Carpet installation', 'Laminate']
-  },
-  {
-    title: 'Custom Carpentry',
-    description: 'Bespoke wooden solutions for storage and living spaces.',
-    image: 'https://images.unsplash.com/photo-1500322969630-a26ab6eb64cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    icon: <Ruler size={20} className="text-primary-500" />,
-    features: ['Kitchen units', 'Built-in cupboards', 'Shelving systems']
-  },
-  {
-    title: 'Glass & Glazing',
-    description: 'Professional window glass replacement and installation.',
-    image: 'https://images.unsplash.com/photo-1581783898371-1c2e5e3d14c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    icon: <Package size={20} className="text-primary-500" />,
-    features: ['Standard windows', 'Glass replacement', 'Mirror installation']
+    title: 'Structural Works',
+    description: 'Professional structural solutions from foundations to roofing.',
+    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    icon: <HardHat size={20} className="text-primary-500" />,
+    features: [
+      'Foundation construction',
+      'Concrete works',
+      'Steel structure installation',
+      'Bricklaying and block work',
+      'Roofing installation and repairs',
+      'Retaining walls',
+      'Paving and roadworks'
+    ]
   }
 ];
 
-const ancillaryServices = [
+const plumbingServices: ServiceItem[] = [
   {
-    title: 'Basic Plumbing',
-    description: 'Quick and reliable plumbing repairs and maintenance.',
+    title: 'Plumbing Services',
+    description: 'Complete plumbing solutions for residential and commercial properties.',
     image: 'https://images.unsplash.com/photo-1607472586893-edb57b2e0e7c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     icon: <Droplet size={20} className="text-primary-500" />,
-    features: ['Cistern repairs', 'Unblocking drains', 'Leak fixes']
-  },
-  {
-    title: 'Electrical Services',
-    description: 'Minor electrical work for residential properties.',
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a26c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    icon: <Zap size={20} className="text-primary-500" />,
-    features: ['Light fitting installation', 'Socket replacement', 'Switch repairs']
+    features: [
+      'Water supply installations',
+      'Drainage systems',
+      'Sewer line installation',
+      'Bathroom and kitchen plumbing',
+      'Geyser installation and repairs',
+      'Borehole pump installations',
+      'Stormwater systems'
+    ]
   }
 ];
 
-const weldingServices = [
+const mechanicalServices: ServiceItem[] = [
   {
-    title: 'Steel Mesh Fitting',
-    description: 'Professional installation of steel reinforcement mesh.',
-    image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    icon: <HardHat size={20} className="text-primary-500" />,
-    features: ['Concrete reinforcement', 'Slab mesh fitting', 'Foundation mesh']
-  },
-  {
-    title: 'Palisade Fencing',
-    description: 'Secure perimeter fencing for properties.',
-    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    icon: <Truck size={20} className="text-primary-500" />,
-    features: ['Security fencing', 'Gate installation', 'Perimeter protection']
-  },
-  {
-    title: 'Basic Steelwork',
-    description: 'Non-structural steel fabrication and installation.',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    icon: <Hammer size={20} className="text-primary-500" />,
-    features: ['Handrails', 'Brackets', 'Support frames']
+    title: 'Mechanical Services',
+    description: 'Professional HVAC and mechanical system installations and maintenance.',
+    image: 'https://images.unsplash.com/photo-1581092335871-4c6af942aad5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    icon: <Fan size={20} className="text-primary-500" />,
+    features: [
+      'HVAC installations',
+      'Ventilation systems',
+      'Air conditioning services',
+      'Refrigeration systems',
+      'Mechanical maintenance'
+    ]
   }
+];
+
+const finishingServices: ServiceItem[] = [
+  {
+    title: 'Finishing Works',
+    description: 'Expert finishing services to bring your space to life.',
+    image: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    icon: <PaintRoller size={20} className="text-primary-500" />,
+    features: [
+      'Plastering',
+      'Painting',
+      'Ceiling installation',
+      'Tiling',
+      'Carpentry and joinery',
+      'Aluminum and glass installation',
+      'Flooring solutions',
+      'Waterproofing'
+    ]
+  }
+];
+
+const maintenanceServices: ServiceItem[] = [
+  {
+    title: 'Maintenance Services',
+    description: 'Reliable maintenance and facility management for your property.',
+    image: 'https://images.unsplash.com/photo-1581783898371-1c2e5e3d14c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    icon: <Settings size={20} className="text-primary-500" />,
+    features: [
+      'Building maintenance',
+      'Preventative maintenance',
+      'Facility management',
+      'Repair and refurbishment',
+      'Property maintenance services'
+    ]
+  }
+];
+
+const exteriorServices: ServiceItem[] = [
+  {
+    title: 'Exterior Works',
+    description: 'Complete exterior solutions for beautiful and functional outdoor spaces.',
+    image: 'https://images.unsplash.com/photo-1501630864272-67b2e2c8c515?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    icon: <Trees size={20} className="text-primary-500" />,
+    features: [
+      'Landscaping',
+      'Boundary walls and fencing',
+      'Driveways and paving',
+      'Drainage systems',
+      'Outdoor lighting'
+    ]
+  }
+];
+
+const whyChooseUs = [
+  { title: 'Quality Workmanship', desc: 'We deliver exceptional quality on every project, large or small.' },
+  { title: 'Experienced Professionals', desc: 'Our team brings years of industry experience and expertise.' },
+  { title: 'Timely Project Delivery', desc: 'We respect your time and consistently meet project deadlines.' },
+  { title: 'Competitive Pricing', desc: 'High-quality services at fair and transparent prices.' },
+  { title: 'Compliance with Safety Standards', desc: 'Full adherence to safety regulations and building codes.' },
+  { title: 'Client-Focused Approach', desc: 'We listen, communicate, and deliver what you need.' }
 ];
 
 export default ServicesPage;

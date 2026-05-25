@@ -47,7 +47,7 @@ const ContactPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-neutral-800">Contact Us</h1>
-          <div className="w-24 h-1 bg-amber-500 mx-auto mt-3"></div>
+          <div className="w-24 h-1 bg-primary-500 mx-auto mt-3"></div>
           <p className="mt-5 text-neutral-600 text-lg">We're ready to discuss your project. Reach out today.</p>
         </div>
         
@@ -77,7 +77,7 @@ const ContactPage = () => {
                   placeholder="Full name" 
                   value={formData.name} 
                   onChange={handleChange} 
-                  className="p-4 border border-neutral-200 rounded-lg focus:outline-none focus:border-amber-500 transition-colors"
+                  className="p-4 border border-neutral-200 rounded-lg focus:outline-none focus:border-primary-500 transition-colors"
                   required 
                 />
                 <input 
@@ -86,7 +86,7 @@ const ContactPage = () => {
                   placeholder="Email address" 
                   value={formData.email} 
                   onChange={handleChange} 
-                  className="p-4 border border-neutral-200 rounded-lg focus:outline-none focus:border-amber-500 transition-colors"
+                  className="p-4 border border-neutral-200 rounded-lg focus:outline-none focus:border-primary-500 transition-colors"
                   required 
                 />
               </div>
@@ -96,7 +96,7 @@ const ContactPage = () => {
                 placeholder="Phone number" 
                 value={formData.phone} 
                 onChange={handleChange} 
-                className="w-full p-4 border border-neutral-200 rounded-lg focus:outline-none focus:border-amber-500 transition-colors"
+                className="w-full p-4 border border-neutral-200 rounded-lg focus:outline-none focus:border-primary-500 transition-colors"
                 required 
               />
               <textarea 
@@ -105,12 +105,12 @@ const ContactPage = () => {
                 placeholder="Tell us about your project..." 
                 value={formData.message} 
                 onChange={handleChange} 
-                className="w-full p-4 border border-neutral-200 rounded-lg focus:outline-none focus:border-amber-500 transition-colors resize-none"
+                className="w-full p-4 border border-neutral-200 rounded-lg focus:outline-none focus:border-primary-500 transition-colors resize-none"
                 required
               ></textarea>
               <button 
                 type="submit" 
-                className="submit-btn bg-amber-600 hover:bg-amber-700 text-white font-semibold py-4 px-8 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 w-full md:w-auto"
+                className="submit-btn bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-8 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 w-full md:w-auto"
               >
                 Send Message <Send size={18} />
               </button>
@@ -155,7 +155,7 @@ const InfoCard = ({ icon, title, content, sub }: { icon: React.ReactNode; title:
       onMouseLeave={() => setHovered(false)}
     >
       <div className="flex gap-4 items-start">
-        <div className="text-amber-600 bg-amber-50 p-3 rounded-lg">{icon}</div>
+        <div className="text-primary-600 bg-primary-50 p-3 rounded-lg">{icon}</div>
         <div>
           <h3 className="font-bold text-lg">{title}</h3>
           <p className="text-neutral-800 font-medium mt-1">{content}</p>

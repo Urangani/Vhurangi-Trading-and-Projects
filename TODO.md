@@ -1,34 +1,12 @@
-# Refactor: modular components for pages/
+0. company logo is @src/assets/vhurangi-trading-logo.jpeg - **DONE** (integrated in Navbar & Footer)
 
-## Step 1 — Create component folder structure
-- [ ] Create `src/components/home/*`:
-  - [ ] `ServiceCard.tsx`
-  - [ ] `TestimonialCard.tsx`
-  - [ ] `ProjectShowcase.tsx`
-- [ ] Create `src/components/services/*`:
-  - [ ] `EnhancedServiceCategory.tsx`
-  - [ ] `ServiceDetailCard.tsx`
-  - [ ] `servicesData.ts`
-- [ ] Create `src/components/about/*`:
-  - [ ] `ValueCard.tsx`
-  - [ ] `TeamCard.tsx`
-- [ ] Create `src/components/contact/*`:
-  - [ ] `InfoCard.tsx`
+1. Change the theme to white and blue and black - **DONE** (primary color changed from orange `#f58814` to blue `#2563eb`, all amber references replaced)
 
-## Step 2 — Refactor pages to use components
-- [ ] Update `src/pages/HomePage.tsx` to import and use the extracted components (remove inline component definitions).
-- [ ] Update `src/pages/ServicesPage.tsx` to import extracted components + data (remove inline component/data definitions).
-- [ ] Update `src/pages/AboutPage.tsx` to import extracted components (remove inline component definitions).
-- [ ] Update `src/pages/ContactPage.tsx` to import extracted components (remove inline component definitions).
+2. Remove all Services and replace them with these ones - **DONE** (ServicesPage and HomePage updated with 7 new categories + Why Choose Us)
 
-## Step 3 — (Optional) Move GSAP animation logic into hooks
-- [ ] Create `src/hooks/useHomePageAnimations.ts` and use it in `HomePage`
-- [ ] Create `src/hooks/useServicesPageAnimations.ts` and use it in `ServicesPage`
-- [ ] Create `src/hooks/useAboutPageAnimations.ts` and use it in `AboutPage`
-- [ ] Create `src/hooks/useContactPageAnimations.ts` and use it in `ContactPage`
-  - [ ] Reduce reliance on global class selectors where practical
-  - [ ] Ensure ScrollTrigger cleanup is correct and localized
+3. The Existing Certifications are - **DONE** (added to AboutPage):
+   - B-BBEE Level 1 contributor
+   - Central Supplier Database for Government
+   - cidb (construction industry development board)
 
-## Step 4 — Validate
-- [ ] Run `npm run build` (or `npm run lint` if available)
-- [ ] Quick manual route smoke test (Home/Services/About/Contact)
+4. Registration number: 2025/561009/07 - **DONE** (added to Footer)

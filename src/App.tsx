@@ -2,7 +2,8 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
-import {HardHat, Phone, Mail, MapPin,Menu, X } from 'lucide-react';
+import { Phone, Mail, MapPin, Menu, X } from 'lucide-react';
+import logo from './assets/vhurangi-trading-logo.jpeg';
 
 // Page Components
 import HomePage from './pages/HomePage';
@@ -63,7 +64,7 @@ const Navbar = () => {
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2 group">
-              <HardHat className="h-8 w-8 text-primary-500 transition-transform group-hover:scale-110 duration-300" />
+              <img src={logo} alt="Vhurang Trading & Projects" className="h-10 w-auto transition-transform group-hover:scale-110 duration-300" />
               <span className="font-bold text-xl text-dark">Vhurang Trading & Projects</span>
             </Link>
           </div>
@@ -142,7 +143,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <HardHat className="h-6 w-6 text-primary-500" />
+              <img src={logo} alt="Vhurang Trading & Projects" className="h-8 w-auto" />
               <span className="font-bold text-white text-lg">Vhurang Trading & Projects</span>
             </div>
             <p className="text-sm">Reliable construction services with quality craftsmanship and compliance you can trust.</p>
@@ -172,6 +173,7 @@ const Footer = () => {
         </div>
         <div className="border-t border-neutral-800 mt-8 pt-8 text-center text-xs">
           <p>&copy; 2025 Vhurang Trading and Projects Pty Ltd. All rights reserved.</p>
+          <p className="mt-1 text-neutral-500">Registration No: 2025/561009/07</p>
         </div>
       </div>
     </footer>
