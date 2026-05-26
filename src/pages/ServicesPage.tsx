@@ -5,9 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   Building,
   HardHat,
-  Wrench,
   PaintRoller,
-  Shield,
   Trees,
   ChevronDown,
   ChevronUp,
