@@ -18,6 +18,7 @@ import {
   Settings
 } from 'lucide-react';
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 const ServicesPage = () => {
@@ -60,7 +61,7 @@ const ServicesPage = () => {
         <div className="hero-parallax absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-dark/80 to-dark/40 z-10"></div>
           <img
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            src="src/assets/exterior-design.jpeg"
             alt="Construction Services"
             className="w-full h-full object-cover"
           />
@@ -310,7 +311,7 @@ const constructionServices: ServiceItem[] = [
   {
     title: 'Construction Services',
     description: 'Comprehensive building construction for residential, commercial, and industrial projects.',
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: "src/assets/exterior-design.jpeg",
     icon: <Building size={20} className="text-primary-500" />,
     features: [
       'Residential building construction',
@@ -329,7 +330,7 @@ const structuralServices: ServiceItem[] = [
   {
     title: 'Structural Works',
     description: 'Professional structural solutions from foundations to roofing.',
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: "src/assets/exterior-design.jpeg",
     icon: <HardHat size={20} className="text-primary-500" />,
     features: [
       'Foundation construction',
@@ -347,7 +348,7 @@ const plumbingServices: ServiceItem[] = [
   {
     title: 'Plumbing Services',
     description: 'Complete plumbing solutions for residential and commercial properties.',
-    image: 'https://images.unsplash.com/photo-1607472586893-edb57b2e0e7c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: "src/assets/pipes.jpeg",
     icon: <Droplet size={20} className="text-primary-500" />,
     features: [
       'Water supply installations',
@@ -365,7 +366,7 @@ const mechanicalServices: ServiceItem[] = [
   {
     title: 'Mechanical Services',
     description: 'Professional HVAC and mechanical system installations and maintenance.',
-    image: 'https://images.unsplash.com/photo-1581092335871-4c6af942aad5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: "src/assets/wielding.jpeg",
     icon: <Fan size={20} className="text-primary-500" />,
     features: [
       'HVAC installations',
@@ -381,7 +382,7 @@ const finishingServices: ServiceItem[] = [
   {
     title: 'Finishing Works',
     description: 'Expert finishing services to bring your space to life.',
-    image: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: "src/assets/exterior-design.jpeg",
     icon: <PaintRoller size={20} className="text-primary-500" />,
     features: [
       'Plastering',
@@ -400,7 +401,7 @@ const maintenanceServices: ServiceItem[] = [
   {
     title: 'Maintenance Services',
     description: 'Reliable maintenance and facility management for your property.',
-    image: 'https://images.unsplash.com/photo-1581783898371-1c2e5e3d14c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: "src/assets/exterior-design.jpeg",
     icon: <Settings size={20} className="text-primary-500" />,
     features: [
       'Building maintenance',
@@ -416,7 +417,7 @@ const exteriorServices: ServiceItem[] = [
   {
     title: 'Exterior Works',
     description: 'Complete exterior solutions for beautiful and functional outdoor spaces.',
-    image: 'https://images.unsplash.com/photo-1501630864272-67b2e2c8c515?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: "src/assets/exterior-design.jpeg",
     icon: <Trees size={20} className="text-primary-500" />,
     features: [
       'Landscaping',

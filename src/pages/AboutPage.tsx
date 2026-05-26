@@ -123,7 +123,7 @@ const AboutPage = () => {
               Our team takes pride in every project—from small maintenance tasks to large structural renovations—always prioritizing safety, timeliness, and customer satisfaction.
             </p>
             <div className="mt-6 flex gap-4">
-              <div className="flex items-center gap-2"><Star className="text-primary-500" size={20} /><span>500+ Projects Completed</span></div>
+              <div className="flex items-center gap-2"><Star className="text-primary-500" size={20} /><span>Guranteed Project Completion</span></div>
               <div className="flex items-center gap-2"><Heart className="text-primary-500" size={20} /><span>98% Client Satisfaction</span></div>
             </div>
           </div>
@@ -163,6 +163,7 @@ const AboutPage = () => {
           <h2 className="text-4xl font-bold text-center text-neutral-800">Our Certifications</h2>
           <div className="w-20 h-1 bg-primary-500 mx-auto mt-3 mb-14"></div>
           <div className="grid md:grid-cols-3 gap-8">
+            
             <CertCard icon={<Award size={32} />} title="B-BBEE Level 1" desc="Level 1 B-BBEE contributor, maximizing procurement recognition for our clients." />
             <CertCard icon={<Shield size={32} />} title="CSD Registered" desc="Registered on the Central Supplier Database for government procurement." />
             <CertCard icon={<Award size={32} />} title="cidb Registered" desc="Registered with the Construction Industry Development Board." />

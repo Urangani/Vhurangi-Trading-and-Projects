@@ -160,9 +160,9 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Contact Info</h3>
             <div className="space-y-2 text-sm">
-              <p className="flex items-center gap-2"><Phone size={16} /> +27 (0) 12 345 6789</p>
-              <p className="flex items-center gap-2"><Mail size={16} /> info@vhurang.co.za</p>
-              <p className="flex items-center gap-2"><MapPin size={16} /> Pretoria, South Africa</p>
+              <p className="flex items-center gap-2"><Phone size={16} /> +27 (0) 609146542"</p>
+              <p className="flex items-center gap-2"><Mail size={16} /> N/A</p>
+              <p className="flex items-center gap-2"><MapPin size={16} /> Thohoyandou, South Africa</p>
             </div>
             <div className="flex space-x-4 mt-4">
               {/* <Facebook size={20} className="cursor-pointer hover:text-primary-400 transition-colors" />

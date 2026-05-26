@@ -8,7 +8,7 @@ import { ArrowRight, Building, HardHat, Wrench, PaintRoller, Mail, Phone, MapPin
 import ServiceCard from '../components/home/ServiceCard';
 import TestimonialCard from '../components/home/TestimonialCard';
 import ProjectShowcase from '../components/home/ProjectShowcase';
-
+import image from '../assets/vhurangi-trading-logo.jpeg'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -154,9 +154,9 @@ const HomePage = () => {
       <section id="home" ref={heroRef} className="relative min-h-screen flex items-center pt-20">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            src={image}
             alt="Construction background"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-fit"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-dark/80 to-dark/40"></div>
         </div>
@@ -232,9 +232,9 @@ const HomePage = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="about-image rounded-2xl overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="src/assets/vhurangi-trading-logo.jpeg"
                 alt="About Vhurang"
-                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-fit transform hover:scale-90 transition-transform duration-500"
               />
             </div>
             <div className="about-content">
@@ -249,7 +249,7 @@ const HomePage = () => {
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="text-primary-500" size={20} />
-                  <span className="text-sm">500+ Projects</span>
+                  <span className="text-sm">Quality Projects</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="text-primary-500" size={20} />
@@ -273,7 +273,7 @@ const HomePage = () => {
       </section>
       
       {/* Project Showcase - Horizontal Scroll Gallery */}
-      <ProjectShowcase />
+      {/* <ProjectShowcase /> */}
       
       {/* Testimonials */}
       <section ref={testimonialsRef} className="py-20 bg-light">
@@ -320,15 +320,15 @@ const HomePage = () => {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Phone size={20} />
-                  <span>+27 (0) 12 345 6789</span>
+                  <span>+27 (0) 609146542</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail size={20} />
-                  <span>info@vhurang.co.za</span>
+                  <span>N/A</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin size={20} />
-                  <span>Pretoria, South Africa</span>
+                  <span>Thohoyandou, South Africa</span>
                 </div>
               </div>
             </div>

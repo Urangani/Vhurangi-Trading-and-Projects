@@ -54,9 +54,9 @@ const ContactPage = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Contact Info */}
           <div ref={infoRef} className="md:col-span-1 space-y-5">
-            <InfoCard icon={<Phone />} title="Phone" content="+27 (0) 12 345 6789" sub="Mon-Fri, 8am-5pm" />
-            <InfoCard icon={<Mail />} title="Email" content="info@vhurang.co.za" sub="Queries responded within 24h" />
-            <InfoCard icon={<MapPin />} title="Service Area" content="Pretoria & Surroundings" sub="Gauteng, South Africa" />
+            <InfoCard icon={<Phone />} title="Phone" content="+27 (0) 609146542" sub="Mon-Fri, 8am-5pm" />
+            <InfoCard icon={<Mail />} title="Email" content="N/A" sub="Queries responded within 24h" />
+            <InfoCard icon={<MapPin />} title="Service Area" content="Thohoyandou & Surroundings" sub="Limpopo, South Africa" />
             <InfoCard icon={<Clock />} title="Office Hours" content="Monday - Friday" sub="8:00 – 17:00" />
           </div>
           
@@ -121,7 +121,7 @@ const ContactPage = () => {
         {/* Map */}
         <div className="mt-16 bg-neutral-200 h-80 rounded-2xl overflow-hidden shadow-lg transform hover:shadow-xl transition-shadow duration-300">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14373.29049609532!2d28.1883364!3d-25.7475768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9561f3af7f0b3b%3A0x3b5f5b5b5b5b5b5b!2sPretoria%2C%20South%20Africa!5e0!3m2!1sen!2s!4v1699999999999!5m2!1sen!2s" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d223851.98724734585!2d30.325389393956616!3d-22.923518365427295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec5c72c7472097b%3A0xd5d5f24ad8f27122!2sThohoyandou!5e1!3m2!1sen!2sza!4v1779790306775!5m2!1sen!2sza"
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
