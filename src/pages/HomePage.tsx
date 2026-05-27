@@ -8,7 +8,7 @@ import { ArrowRight, Building, HardHat, Wrench, PaintRoller, Mail, Phone, MapPin
 import ServiceCard from '../components/home/ServiceCard';
 import TestimonialCard from '../components/home/TestimonialCard';
 // import ProjectShowcase from '../components/home/ProjectShowcase';
-import image from '/assets/vhurangi-trading-logo.jpeg'
+import image from 'assets/vhurangi-trading-logo.jpeg'
 
 gsap.registerPlugin(ScrollTrigger);
 
