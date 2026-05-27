@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import { Phone, Mail, MapPin, Menu, X } from 'lucide-react';
-import logo from './assets/vhurangi-trading-logo.jpeg';
 
 // Page Components
 import HomePage from './pages/HomePage';
@@ -64,7 +63,7 @@ const Navbar = () => {
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2 group">
-              <img src={logo} alt="Vhurang Trading & Projects" className="h-10 w-auto transition-transform group-hover:scale-110 duration-300" />
+              <img src='assets/vhurangi-trading-logo.jpeg' alt="Vhurang Trading & Projects" className="h-10 w-auto transition-transform group-hover:scale-110 duration-300" />
               <span className="font-bold text-xl text-dark">Vhurang Trading & Projects</span>
             </Link>
           </div>
@@ -143,7 +142,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <img src={logo} alt="Vhurang Trading & Projects" className="h-8 w-auto" />
+              <img src='assets/vhurangi-trading-logo.jpeg' alt="Vhurang Trading & Projects" className="h-8 w-auto" />
               <span className="font-bold text-white text-lg">Vhurang Trading & Projects</span>
             </div>
             <p className="text-sm">Reliable construction services with quality craftsmanship and compliance you can trust.</p>
