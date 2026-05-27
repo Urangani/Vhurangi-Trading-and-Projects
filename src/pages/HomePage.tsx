@@ -8,7 +8,7 @@ import { ArrowRight, Building, HardHat, Wrench, PaintRoller, Mail, Phone, MapPin
 import ServiceCard from '../components/home/ServiceCard';
 import TestimonialCard from '../components/home/TestimonialCard';
 // import ProjectShowcase from '../components/home/ProjectShowcase';
-import image from '../assets/vhurangi-trading-logo.jpeg'
+import image from '/assets/vhurangi-trading-logo.jpeg'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -156,9 +156,9 @@ const HomePage = () => {
           <img 
             src={image}
             alt="Construction background"
-            className="w-full h-full object-fit"
+            className="w-full h-full object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-dark/80 to-dark/40"></div>
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-none"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -166,14 +166,14 @@ const HomePage = () => {
             <div className="hero-tagline inline-block bg-primary-500/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
               <span className="text-primary-500 font-semibold">Building with precision, renovating with care.</span>
             </div>
-            <h1 className="hero-title text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+            <h1 className="hero-title text-5xl md:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-2xl">
               Quality Construction & 
               <span className="text-primary-500"> Renovation Services</span>
             </h1>
-            <p className="hero-description text-xl text-neutral-200 mb-8">
+            <p className="hero-description text-xl text-neutral-200 mb-8 drop-shadow-lg">
               Professional construction solutions tailored to your needs. From structural work to interior finishing, we deliver excellence.
             </p>
-            <Link to="/contact" className="hero-button inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 px-8 py-4 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
+            <Link to="/contact" className="hero-button inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 px-8 py-4 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg shadow-black/50">
               Get Free Quote <ArrowRight size={18} />
             </Link>
           </div>
@@ -240,7 +240,7 @@ const HomePage = () => {
             <div className="about-content">
               <span className="text-primary-500 font-semibold text-sm uppercase tracking-wider">About Us</span>
               <h2 className="text-3xl md:text-4xl font-bold text-dark mt-2 mb-4">
-                2+ Years of Excellence in Construction
+                3+ Years of Excellence in Construction
               </h2>
               <p className="text-neutral-600 mb-6">
                 Vhurang Trading and Projects has been delivering quality construction services since 2010. 

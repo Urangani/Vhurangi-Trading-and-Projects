@@ -59,7 +59,7 @@ const ServicesPage = () => {
         <div className="hero-parallax absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-dark/80 to-dark/40 z-10"></div>
           <img
-            src="src/assets/exterior-design.jpeg"
+            src="assets/exterior-design.jpeg"
             alt="Construction Services"
             className="w-full h-full object-cover"
           />
@@ -309,7 +309,7 @@ const constructionServices: ServiceItem[] = [
   {
     title: 'Construction Services',
     description: 'Comprehensive building construction for residential, commercial, and industrial projects.',
-    image: "src/assets/exterior-design.jpeg",
+    image: "assets/exterior-design.jpeg",
     icon: <Building size={20} className="text-primary-500" />,
     features: [
       'Residential building construction',
@@ -328,7 +328,7 @@ const structuralServices: ServiceItem[] = [
   {
     title: 'Structural Works',
     description: 'Professional structural solutions from foundations to roofing.',
-    image: "src/assets/exterior-design.jpeg",
+    image: "assets/exterior-design.jpeg",
     icon: <HardHat size={20} className="text-primary-500" />,
     features: [
       'Foundation construction',
@@ -346,7 +346,7 @@ const plumbingServices: ServiceItem[] = [
   {
     title: 'Plumbing Services',
     description: 'Complete plumbing solutions for residential and commercial properties.',
-    image: "src/assets/pipes.jpeg",
+    image: "assets/pipes.jpeg",
     icon: <Droplet size={20} className="text-primary-500" />,
     features: [
       'Water supply installations',
@@ -364,7 +364,7 @@ const mechanicalServices: ServiceItem[] = [
   {
     title: 'Mechanical Services',
     description: 'Professional HVAC and mechanical system installations and maintenance.',
-    image: "src/assets/wielding.jpeg",
+    image: "assets/wielding.jpeg",
     icon: <Fan size={20} className="text-primary-500" />,
     features: [
       'HVAC installations',
@@ -380,7 +380,7 @@ const finishingServices: ServiceItem[] = [
   {
     title: 'Finishing Works',
     description: 'Expert finishing services to bring your space to life.',
-    image: "src/assets/exterior-design.jpeg",
+    image: "assets/exterior-design.jpeg",
     icon: <PaintRoller size={20} className="text-primary-500" />,
     features: [
       'Plastering',
@@ -399,7 +399,7 @@ const maintenanceServices: ServiceItem[] = [
   {
     title: 'Maintenance Services',
     description: 'Reliable maintenance and facility management for your property.',
-    image: "src/assets/exterior-design.jpeg",
+    image: "assets/exterior-design.jpeg",
     icon: <Settings size={20} className="text-primary-500" />,
     features: [
       'Building maintenance',
@@ -415,7 +415,7 @@ const exteriorServices: ServiceItem[] = [
   {
     title: 'Exterior Works',
     description: 'Complete exterior solutions for beautiful and functional outdoor spaces.',
-    image: "src/assets/exterior-design.jpeg",
+    image: "assets/exterior-design.jpeg",
     icon: <Trees size={20} className="text-primary-500" />,
     features: [
       'Landscaping',

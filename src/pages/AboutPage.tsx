@@ -128,7 +128,7 @@ const AboutPage = () => {
             </div>
           </div>
           <div className="story-image rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-500">
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Construction team" className="w-full h-96 object-cover" />
+            <img src="assets/workers.jpeg" alt="Construction team" className="w-full h-96 object-cover" />
           </div>
         </div>
       </section>
