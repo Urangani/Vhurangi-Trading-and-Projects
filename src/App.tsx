@@ -63,8 +63,7 @@ const Navbar = () => {
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2 group">
-              <img src='assets/vhurangi-trading-logo.jpeg' alt="Vhurang Trading & Projects" className="h-10 w-auto transition-transform group-hover:scale-110 duration-300" />
-              <span className="font-bold text-xl text-dark">Vhurang Trading & Projects</span>
+              <img src='assets/vhurangi-trading-logo.jpeg' alt="Vhurang Trading & Projects" className="h-15 w-50 transition-transform group-hover:scale-110 duration-300" />
             </Link>
           </div>
           

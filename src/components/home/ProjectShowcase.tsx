@@ -1,9 +1,6 @@
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import image from '../../assets/exterior-design.jpeg'
-import image2 from '../../assets/interior-design.jpeg'
-import image3 from '../../assets/wielding.jpeg'
-
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,17 +14,17 @@ const projects: Project[] = [
   {
     title: 'Modern Residential Complex',
     category: 'Structural Construction',
-    image: image
+    image: 'assets/exterior-design.jpeg'
   },
   {
     title: 'Luxury Interior Renovation',
     category: 'Interior Design',
-    image: image2
+    image: 'assets/interior-design.jpeg'
   },
   {
     title: 'Commercial Office Build',
     category: 'Commercial Construction',
-    image: image3
+    image: 'assets/wielding.jpeg'
   },
   {
     title: 'Industrial Warehouse',
@@ -37,10 +34,46 @@ const projects: Project[] = [
 ];
 
 export default function ProjectShowcase() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
+  useEffect(() => {
+    const container = containerRef.current;
+    const sectionEl = sectionRef.current;
+    if (!container || !sectionEl) return;
+
+    const totalScroll = container.scrollWidth - window.innerWidth;
+    if (totalScroll <= 0) return;
+
+    const pinTrigger = ScrollTrigger.create({
+      trigger: sectionEl,
+      start: 'top top',
+      end: `+=${totalScroll}`,
+      pin: true,
+      anticipatePin: 1,
+      invalidateOnRefresh: true
+    });
+
+    const tween = gsap.to(container, {
+      x: () => -totalScroll,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: sectionEl,
+        start: 'top top',
+        end: `+=${totalScroll}`,
+        scrub: 1,
+        invalidateOnRefresh: true
+      }
+    });
+
+    return () => {
+      pinTrigger.kill();
+      tween.scrollTrigger?.kill();
+    };
+  }, []);
 
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section ref={sectionRef} className="py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">Our Latest Projects</h2>
@@ -49,9 +82,8 @@ export default function ProjectShowcase() {
         </div>
       </div>
 
-
-  <div className='overflow-hidden'>
-    <div className="flex gap-6 px-4 sm:px-6 lg:px-8 w-max overflow-hidden">
+  <div className="overflow-hidden">
+    <div ref={containerRef} className="flex gap-6 px-4 sm:px-6 lg:px-8 w-max overflow-hidden">
       {projects.map((project, idx) => (
         <div
           key={idx}

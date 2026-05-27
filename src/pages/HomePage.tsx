@@ -7,7 +7,7 @@ import { ArrowRight, Building, HardHat, Wrench, PaintRoller, Mail, Phone, MapPin
 
 import ServiceCard from '../components/home/ServiceCard';
 import TestimonialCard from '../components/home/TestimonialCard';
-// import ProjectShowcase from '../components/home/ProjectShowcase';
+import ProjectShowcase from '../components/home/ProjectShowcase';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -150,26 +150,19 @@ const HomePage = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section id="home" ref={heroRef} className="relative min-h-screen flex items-center pt-20">
-        <div className="absolute inset-0">
-          <img 
-            src="assets/vhurangi-trading-logo.jpeg"
-            alt="Construction background"
-            className="w-full h-full object-center"
-          />
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-none"></div>
-        </div>
+      <section id="home" ref={heroRef} className="relative h-full flex items-center pt-20 bg-white">
+
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl">
             <div className="hero-tagline inline-block bg-primary-500/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
               <span className="text-primary-500 font-semibold">Building with precision, renovating with care.</span>
             </div>
-            <h1 className="hero-title text-5xl md:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-2xl">
+            <h1 className="hero-title text-5xl md:text-7xl font-bold text-black leading-tight mb-6 drop-shadow-2xl">
               Quality Construction & 
               <span className="text-primary-500"> Renovation Services</span>
             </h1>
-            <p className="hero-description text-xl text-neutral-200 mb-8 drop-shadow-lg">
+            <p className="hero-description text-xl text-zinc mb-8 drop-shadow-lg">
               Professional construction solutions tailored to your needs. From structural work to interior finishing, we deliver excellence.
             </p>
             <Link to="/contact" className="hero-button inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 px-8 py-4 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg shadow-black/50">
@@ -187,43 +180,6 @@ const HomePage = () => {
 
       </section>
       
-      {/* Services Overview */}
-      <section id="services" ref={servicesRef} className="py-20 bg-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">Our Services</h2>
-            <div className="w-20 h-1 bg-primary-500 mx-auto"></div>
-            <p className="text-neutral-600 mt-4 max-w-2xl mx-auto">Comprehensive construction solutions for every need</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <ServiceCard 
-              icon={<Building size={32} />}
-              title="Construction"
-              description="Residential, commercial, and industrial building projects"
-              delay={0}
-            />
-            <ServiceCard 
-              icon={<HardHat size={32} />}
-              title="Structural Works"
-              description="Foundations, concrete, steel, and roofing solutions"
-              delay={1}
-            />
-            <ServiceCard
-              icon={<Wrench size={32} />}
-              title="Plumbing & Mechanical"
-              description="Water supply, drainage, HVAC, and mechanical systems"
-              delay={2}
-            />
-            <ServiceCard 
-              icon={<PaintRoller size={32} />}
-              title="Finishing & Maintenance"
-              description="Plastering, painting, tiling, and property upkeep"
-              delay={3}
-            />
-          </div>
-        </div>
-      </section>
       
       {/* About Us Preview */}
       <section id="about" ref={aboutRef} className="py-20 bg-white">
@@ -270,9 +226,48 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Services Overview */}
+      <section id="services" ref={servicesRef} className="py-20 bg-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">Our Services</h2>
+            <div className="w-20 h-1 bg-primary-500 mx-auto"></div>
+            <p className="text-neutral-600 mt-4 max-w-2xl mx-auto">Comprehensive construction solutions for every need</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <ServiceCard 
+              icon={<Building size={32} />}
+              title="Construction"
+              description="Residential, commercial, and industrial building projects"
+              delay={0}
+            />
+            <ServiceCard 
+              icon={<HardHat size={32} />}
+              title="Structural Works"
+              description="Foundations, concrete, steel, and roofing solutions"
+              delay={1}
+            />
+            <ServiceCard
+              icon={<Wrench size={32} />}
+              title="Plumbing & Mechanical"
+              description="Water supply, drainage, HVAC, and mechanical systems"
+              delay={2}
+            />
+            <ServiceCard 
+              icon={<PaintRoller size={32} />}
+              title="Finishing & Maintenance"
+              description="Plastering, painting, tiling, and property upkeep"
+              delay={3}
+            />
+          </div>
+        </div>
+      </section>
+
       
       {/* Project Showcase - Horizontal Scroll Gallery */}
-      {/* <ProjectShowcase /> */}
+      <ProjectShowcase />
       
       {/* Testimonials */}
       <section ref={testimonialsRef} className="py-20 bg-light">
