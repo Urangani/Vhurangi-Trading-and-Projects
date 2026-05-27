@@ -8,7 +8,6 @@ import { ArrowRight, Building, HardHat, Wrench, PaintRoller, Mail, Phone, MapPin
 import ServiceCard from '../components/home/ServiceCard';
 import TestimonialCard from '../components/home/TestimonialCard';
 // import ProjectShowcase from '../components/home/ProjectShowcase';
-import image from '/assets/vhurangi-trading-logo.jpeg'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -154,7 +153,7 @@ const HomePage = () => {
       <section id="home" ref={heroRef} className="relative min-h-screen flex items-center pt-20">
         <div className="absolute inset-0">
           <img 
-            src={image}
+            src="assets/vhurangi-trading-logo.jpeg"
             alt="Construction background"
             className="w-full h-full object-center"
           />
@@ -232,7 +231,7 @@ const HomePage = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="about-image rounded-2xl overflow-hidden shadow-xl">
               <img 
-                src="src/assets/vhurangi-trading-logo.jpeg"
+                src="assets/vhurangi-trading-logo.jpeg"
                 alt="About Vhurang"
                 className="w-full h-full object-fit transform hover:scale-90 transition-transform duration-500"
               />
