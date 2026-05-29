@@ -73,7 +73,7 @@ const HomePage = () => {
         opacity: 1,
         duration: 0.8,
         scrollTrigger: {
-          trigger: aboutRef.current,
+          trigger: heroRef.current,
           start: 'top 75%',
           toggleActions: 'play none none reverse'
         }
@@ -150,14 +150,22 @@ const HomePage = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section id="home" ref={heroRef} className="relative h-full flex items-center pt-20 bg-white">
+      <section id="home" ref={heroRef} className="relative h-full flex items-center bg-white">
 
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl">
+            <div className="about-image rounded-2xl overflow-hidden pb-10">
+              <img 
+                src="assets/vhurangi-trading-logo.jpeg"
+                alt="About Vhurang"
+                className="w-full h-full object-fit transform hover:scale-90 transition-transform duration-500"
+              />
+            </div>
+{/* 
             <div className="hero-tagline inline-block bg-primary-500/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
               <span className="text-primary-500 font-semibold">Building with precision, renovating with care.</span>
-            </div>
+            </div> */}
             <h1 className="hero-title text-5xl md:text-7xl font-bold text-black leading-tight mb-6 drop-shadow-2xl">
               Quality Construction & 
               <span className="text-primary-500"> Renovation Services</span>
