@@ -309,7 +309,7 @@ const constructionServices: ServiceItem[] = [
   {
     title: 'Construction Services',
     description: 'Comprehensive building construction for residential, commercial, and industrial projects.',
-    image: "assets/exterior-design.jpeg",
+    image: "assets/building-constrution.jpeg",
     icon: <Building size={20} className="text-primary-500" />,
     features: [
       'Residential building construction',
@@ -328,7 +328,7 @@ const structuralServices: ServiceItem[] = [
   {
     title: 'Structural Works',
     description: 'Professional structural solutions from foundations to roofing.',
-    image: "assets/exterior-design.jpeg",
+    image: "assets/brick-laying.jpeg",
     icon: <HardHat size={20} className="text-primary-500" />,
     features: [
       'Foundation construction',
@@ -364,7 +364,7 @@ const mechanicalServices: ServiceItem[] = [
   {
     title: 'Mechanical Services',
     description: 'Professional HVAC and mechanical system installations and maintenance.',
-    image: "assets/wielding.jpeg",
+    image: "assets/machine-maintanance.jpeg",
     icon: <Fan size={20} className="text-primary-500" />,
     features: [
       'HVAC installations',
@@ -380,7 +380,7 @@ const finishingServices: ServiceItem[] = [
   {
     title: 'Finishing Works',
     description: 'Expert finishing services to bring your space to life.',
-    image: "assets/exterior-design.jpeg",
+    image: "assets/painting-and-construction.jpeg",
     icon: <PaintRoller size={20} className="text-primary-500" />,
     features: [
       'Plastering',

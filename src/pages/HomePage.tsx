@@ -206,7 +206,7 @@ const HomePage = () => {
                 3+ Years of Excellence in Construction
               </h2>
               <p className="text-neutral-600 mb-6">
-                Vhurang Trading and Projects has been delivering quality construction services since 2010. 
+                Vhurang Trading and Projects has been delivering quality construction services since 2023. 
                 Our commitment to excellence, safety, and customer satisfaction sets us apart.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-6">
@@ -326,7 +326,7 @@ const HomePage = () => {
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail size={20} />
-                  <span>N/A</span>
+                  <span>vhulendamak@icloud.com</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin size={20} />

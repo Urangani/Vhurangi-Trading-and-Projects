@@ -55,7 +55,7 @@ const ContactPage = () => {
           {/* Contact Info */}
           <div ref={infoRef} className="md:col-span-1 space-y-5">
             <InfoCard icon={<Phone />} title="Phone" content="+27 (0) 609146542" sub="Mon-Fri, 8am-5pm" />
-            <InfoCard icon={<Mail />} title="Email" content="N/A" sub="Queries responded within 24h" />
+            <InfoCard icon={<Mail />} title="Email" content="vhulendamak@icloud.com" sub="Queries responded within 24h" />
             <InfoCard icon={<MapPin />} title="Service Area" content="Thohoyandou & Surroundings" sub="Limpopo, South Africa" />
             <InfoCard icon={<Clock />} title="Office Hours" content="Monday - Friday" sub="8:00 – 17:00" />
           </div>
