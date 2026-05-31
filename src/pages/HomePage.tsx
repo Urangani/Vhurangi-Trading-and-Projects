@@ -193,13 +193,13 @@ const HomePage = () => {
       <section id="about" ref={aboutRef} className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="about-image rounded-2xl overflow-hidden shadow-xl">
+            {/* <div className="about-image rounded-2xl overflow-hidden shadow-xl">
               <img 
                 src="assets/vhurangi-trading-logo.jpeg"
                 alt="About Vhurang"
                 className="w-full h-full object-fit transform hover:scale-90 transition-transform duration-500"
               />
-            </div>
+            </div> */}
             <div className="about-content">
               <span className="text-primary-500 font-semibold text-sm uppercase tracking-wider">About Us</span>
               <h2 className="text-3xl md:text-4xl font-bold text-dark mt-2 mb-4">
